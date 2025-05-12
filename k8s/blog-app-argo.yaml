@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blog
+  namespace: default 
 spec:
   replicas: 1
   selector:
@@ -24,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: blog-service
-  namespace: default  # <-- Add this
+  namespace: default
 spec:
   selector:
     app: blog
