@@ -12,6 +12,11 @@ db = client['blog']
 collection = db['posts']
 
 
+@app.route('/', methods=['GET'])
+def hello_world():
+    return jsonify('Hello World!')
+
+
 @app.route('/posts', methods=['GET'])
 def get_all_posts():
     cursor = collection.find()
@@ -49,7 +54,7 @@ def update_post(post_id):
     title = data.get('title')
     content = data.get('content')
     post = collection.find_one_and_update({'_id': ObjectId(post_id)}, {
-                                          '$set': {'title': title, 'content': content}}, return_document=True)
+        '$set': {'title': title, 'content': content}}, return_document=True)
     if post:
         post['_id'] = str(post['_id'])
         return jsonify({'post': post})
