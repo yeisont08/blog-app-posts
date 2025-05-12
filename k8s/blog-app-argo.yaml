@@ -24,6 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: blog-service
+  namespace: default  # <-- Add this
 spec:
   selector:
     app: blog
