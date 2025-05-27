@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: blog
-        image: jilopezv1/blog-app-posts:latest # <- This comes from Docker Hub/ need to change tags
+        image: yeisont08/blog-app-posts:latest # <- This comes from Docker Hub/ need to change tags
         ports:
         - containerPort: 5000
 
